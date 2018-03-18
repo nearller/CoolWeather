@@ -1,9 +1,7 @@
 package com.vrpip.coolweather.util;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.icu.text.SimpleDateFormat;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 
@@ -15,6 +13,7 @@ import com.vrpip.coolweather.model.Province;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 

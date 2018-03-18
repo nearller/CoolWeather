@@ -5,17 +5,15 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.vrpip.coolweather.R;
+import com.vrpip.coolweather.service.AutoUpdateService;
 import com.vrpip.coolweather.util.HttpCallbackListener;
 import com.vrpip.coolweather.util.HttpUtil;
 import com.vrpip.coolweather.util.Utility;
@@ -180,11 +178,7 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
         currentDateText.setText(prefs.getString("current_date", ""));
         weatherInfoLayout.setVisibility(View.VISIBLE);
         cityNameText.setVisibility(View.VISIBLE);
-        Log.v("city_name-->","" + prefs.getString("city_name", ""));
-        Log.v("temp1-->",""+ prefs.getString("temp1", ""));
-        Log.v("temp2-->","" + prefs.getString("temp2", ""));
-        Log.v("weather_desp-->","" + prefs.getString("weather_desp", ""));
-        Log.v("publish_time-->","" +prefs.getString("publish_time", ""));
-        Log.v("current_date-->",""+prefs.getString("current_date", ""));
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }
